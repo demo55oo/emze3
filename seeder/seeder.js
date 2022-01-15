@@ -1,11 +1,7 @@
 import { readFile } from 'fs/promises'
 import { db, auth } from '../src/firebase.config.js'
-import { addDoc, collection } from 'firebase/firestore'
-import {
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from 'firebase/auth'
+import { addDoc, collection, Timestamp } from 'firebase/firestore'
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'
 
 const { listings } = JSON.parse(
   await readFile(new URL('./listings.json', import.meta.url))
@@ -17,11 +13,11 @@ async function seed(userRef) {
     const docRef = await addDoc(collection(db, 'listings'), {
       ...listing,
       userRef,
+      timestamp: new Timestamp(),
     })
     console.log(`Created listing: ${docRef.id}`)
   }
   console.log('completed seeding... exiting')
-  signOut()
   process.exit(1)
 }
 
