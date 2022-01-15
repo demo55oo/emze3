@@ -20,7 +20,7 @@ export const db = getFirestore()
 export const auth = getAuth()
 const storage = getStorage()
 
-if (process.env.REACT_ENV !== 'production') {
+if (process.env.NODE_ENV !== 'production') {
   connectFirestoreEmulator(db, 'localhost', 8080)
   connectAuthEmulator(auth, 'http://localhost:9099')
   connectStorageEmulator(storage, 'localhost', 9199)
