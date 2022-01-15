@@ -21,6 +21,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "emulate": "firebase emulators:start --import emulatordb --export-on-exit",
     "seed": "node seeder/seeder.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
