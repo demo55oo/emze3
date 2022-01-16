@@ -12,8 +12,8 @@ async function seed(userRef) {
   for (const listing of listings) {
     const docRef = await addDoc(collection(db, 'listings'), {
       ...listing,
-      userRef,
-      timestamp: new Timestamp(),
+      userRef, // overwrite the userRef with a real ref
+      timestamp: new Timestamp(), // generate a timestamp
     })
     console.log(`Created listing: ${docRef.id}`)
   }
