@@ -18,7 +18,7 @@ async function seed(userRef) {
     console.log(`Created listing: ${docRef.id}`)
   }
   console.log('completed seeding... exiting')
-  process.exit(1)
+  process.exit(0)
 }
 
 // NOTE: we first need to add a user in our Firebase console then sign them in
