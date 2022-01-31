@@ -39,6 +39,8 @@ function Listing() {
     return <Spinner />
   }
 
+  // TODO: use a formatMoney function instead of toString and replace with regex
+
   return (
     <main>
       <Helmet>
