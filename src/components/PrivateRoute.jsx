@@ -2,6 +2,8 @@ import { Navigate, Outlet } from 'react-router-dom'
 import { useAuthStatus } from '../hooks/useAuthStatus'
 import Spinner from './Spinner'
 
+// TODO: remove privateRoute and implement a useAuth customhook
+
 const PrivateRoute = () => {
   const { loggedIn, checkingStatus } = useAuthStatus()
 

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
+// TODO: change to useAuth hook and return the Firebase authenticated user
+
 export const useAuthStatus = () => {
   const [loggedIn, setLoggedIn] = useState(false)
   const [checkingStatus, setCheckingStatus] = useState(true)
