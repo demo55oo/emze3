@@ -23,6 +23,8 @@ async function seed(userRef) {
 
 // NOTE: we first need to add a user in our Firebase console then sign them in
 // with email and password
+// so to use the code as is you need a 'admin@marketplace.com' pasword of 'admin123'
+// in your Firebase Auth or replace with a user of your choosing.
 signInWithEmailAndPassword(auth, 'admin@marketplace.com', 'admin123').then(
   ({ user: { uid } }) => {
     console.log('logged in user ', uid)
