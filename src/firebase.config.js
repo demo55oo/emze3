@@ -5,7 +5,7 @@ import { getStorage, connectStorageEmulator } from 'firebase/storage'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyCUFVeyWLKY772dOtJ1BSvX3PjennZXC3I',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: 'rftb2022housemarketplace.firebaseapp.com',
   projectId: 'rftb2022housemarketplace',
   storageBucket: 'rftb2022housemarketplace.appspot.com',
