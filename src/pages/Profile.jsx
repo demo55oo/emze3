@@ -122,8 +122,11 @@ function Profile() {
             onClick={() => {
               // NOTE: test what is happening here, why conditional check for
               // Promise returned from onSubmit?
-              changeDetails && onSubmit()
-              setChangeDetails(!changeDetails)
+              // changeDetails && onSubmit()
+              //setChangeDetails((prevState) => !prevState)
+              if (changeDetails) {
+                onSubmit().then(() => setChangeDetails(!changeDetails))
+              }
             }}
           >
             {changeDetails ? 'done' : 'change'}
