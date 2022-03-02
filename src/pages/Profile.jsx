@@ -120,8 +120,10 @@ function Profile() {
           <p
             className='changePersonalDetails'
             onClick={() => {
+              // NOTE: test what is happening here, why conditional check for
+              // Promise returned from onSubmit?
               changeDetails && onSubmit()
-              setChangeDetails((prevState) => !prevState)
+              setChangeDetails(!changeDetails)
             }}
           >
             {changeDetails ? 'done' : 'change'}
