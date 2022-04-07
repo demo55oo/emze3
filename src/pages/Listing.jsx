@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
@@ -17,7 +17,8 @@ function Listing() {
   const [loading, setLoading] = useState(true)
   const [shareLinkCopied, setShareLinkCopied] = useState(false)
 
-  const navigate = useNavigate()
+  // NOTE: navigate is not used and can be removed.
+  // const navigate = useNavigate()
   const params = useParams()
   const auth = getAuth()
 
@@ -33,7 +34,7 @@ function Listing() {
     }
 
     fetchListing()
-  }, [navigate, params.listingId])
+  }, [params.listingId])
 
   if (loading) {
     return <Spinner />
