@@ -13,6 +13,11 @@ import { toast } from 'react-toastify'
 import { v4 as uuidv4 } from 'uuid'
 import Spinner from '../components/Spinner'
 
+// BUG: No way to edit iamges leading to duplicate inmages in Storage bucket
+// need to show current images with option to delete images
+// need to allow submit without adding images
+// optional to add additional images
+
 function EditListing() {
   // eslint-disable-next-line
   const [geolocationEnabled, setGeolocationEnabled] = useState(true)
