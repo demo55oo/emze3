@@ -42,18 +42,21 @@ function Listing() {
 
   // TODO: use a formatMoney function instead of toString and replace with regex
 
+  // NOTE: iterating on listins we can just use url instead of index, url is unique too so better key
   return (
     <main>
       <Helmet>
         <title>{listing.name}</title>
       </Helmet>
       <Swiper slidesPerView={1} pagination={{ clickable: true }}>
-        {listing.imgUrls.map((url, index) => (
-          <SwiperSlide key={index}>
+        {listing.imgUrls.map((url) => (
+          <SwiperSlide key={url}>
             <div
               style={{
-                background: `url(${listing.imgUrls[index]}) center no-repeat`,
+                background: `url(${url}) center no-repeat`,
                 backgroundSize: 'cover',
+                // NOTE: content needs a minimun height
+                minHeight: '300px',
               }}
               className='swiperSlideDiv'
             ></div>
