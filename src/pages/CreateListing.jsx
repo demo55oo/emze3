@@ -33,7 +33,9 @@ const initialFormState = {
 }
 
 function CreateListing() {
-  const [geolocationEnabled, setGeolocationEnabled] = useState(true)
+  // NOTE: no need for unused useState setter here
+  const geolocationEnabled = true
+
   const [loading, setLoading] = useState(false)
 
   const [formData, setFormData] = useState(initialFormState)
