@@ -169,8 +169,14 @@ function CreateListing() {
       return
     })
 
+    // NOTE: Firebase expects numbers for discountedPrice, regularPrice,
+    // bedrooms and bathrooms
     const formDataCopy = {
       ...formData,
+      bedrooms: parseInt(bedrooms),
+      bathrooms: parseInt(bathrooms),
+      discountedPrice: parseInt(discountedPrice),
+      regularPrice: parseInt(regularPrice),
       imgUrls,
       geolocation,
       timestamp: serverTimestamp(),
