@@ -6,6 +6,7 @@ import { ReactComponent as PersonOutlineIcon } from '../assets/svg/personOutline
 // NOTE: Here should be using NavLink to detect active path
 // this is only possible since version 6.2.1 and wasn't possilbe in
 // the course code which is why Brad went with the option he did
+// NOTE: add the 'end' prop if your ExploreIcon is always active
 
 function Navbar() {
   return (
@@ -13,7 +14,7 @@ function Navbar() {
       <nav className='navbarNav'>
         <ul className='navbarListItems'>
           <li className='navbarListItem'>
-            <NavLink to='/'>
+            <NavLink to='/' end>
               {({ isActive }) => (
                 <>
                   <ExploreIcon
