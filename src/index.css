@@ -3,9 +3,9 @@
   box-sizing: border-box;
 }
 
-html::-webkit-scrollbar {
-  display: none;
-}
+/* html::-webkit-scrollbar { */
+/*   display: none; */
+/* } */
 
 body {
   font-family: 'Montserrat', sans-serif;
